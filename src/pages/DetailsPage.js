@@ -1,24 +1,14 @@
-// import React from 'react';
-// import { useParams } from 'react-router-dom';
-// import { useContext } from 'react';
-// import CharactersContext from '../store/CharactersContext';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import CharacterDetailsCard from '../components/CharacterDetailsCard';
 
-function DetailsPage () {
-    console.log("ceva");
-    // const ctx = useContext(CharactersContext);
-    // const characters = ctx.characters;
-    // console.log("ceva");
-    // console.log(characters);
-    // const params = useParams();
-    // const character = characters.find(c => c.id === params.id);
-// console.log(params.id);
-    // console.log(characters);
-    // console.log(params.id);
-    // console.log(character);
+const DetailsPage = () => {
+    const params = useParams();
     return (
         <div>
-            <h1>Details page</h1>
-            
+            <Link to='/characters'>back to search page</Link>
+            <CharacterDetailsCard id={params.id} />
+
         </div>
     );
 };

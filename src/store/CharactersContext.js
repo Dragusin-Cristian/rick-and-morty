@@ -21,6 +21,7 @@ export const CharactersContextProvider = (props) => {
             })).then(data => {
                 setCharacters(data.results);
                 setIsLoading(false);
+                console.log("FETCHED");
             });
     }
 
