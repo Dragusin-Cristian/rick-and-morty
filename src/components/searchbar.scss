@@ -24,19 +24,20 @@ form.searchForm {
     text-align: center;
 
 
-    -webkit-transition: max-width 0.35s ease-in-out, width 0.35s ease-in-out;
-    transition: max-width 0.35s ease-in-out, width 0.35s ease-in-out;
+    -webkit-transition: max-width 0.25s ease-in-out, width 0.25s ease-in-out;
+    transition: max-width 0.25s ease-in-out, width 0.25s ease-in-out;
 
     &:focus {
       outline-color: #203a61;
       width: 80%;
       max-width: 400px;
-    }
 
-    
+      
+    }    
   }
   ::placeholder{
     color: lightgrey;
     opacity: 1;
+
   }
 }
