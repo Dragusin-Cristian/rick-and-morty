@@ -21,7 +21,7 @@ const CharactersList = () => {
             if (search === '' || search === null) {
                 setSearchedItems(characters);
             } else {
-                setSearchedItems(characters.filter(c => c.name.toLowerCase().indexOf(search) !== -1));
+                setSearchedItems(characters.filter(c => c.name.toLowerCase().indexOf(search.toLowerCase()) !== -1));
             }
         }
     }, [isLoading, characters, search])
