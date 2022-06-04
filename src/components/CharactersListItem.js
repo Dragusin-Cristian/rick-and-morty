@@ -9,7 +9,7 @@ const CharactersListItem = ({ avatar, name, status, id }) => {
                 <div className={classes.cardCont}>
                     <div className={classes.card}>
                         <img src={avatar} alt="Avatar" className={classes.avatar} />
-                        <div className={classes.container}>
+                        <div className={classes.dataContainer}>
                             <span className={classes.itemData}>
                                 <h4 className={classes.itemName}>{name}</h4>
                                 <p className={classes.itemStatus}>-{status.toLowerCase()}-</p>

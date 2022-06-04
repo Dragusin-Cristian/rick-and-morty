@@ -1,34 +1,67 @@
 // import { useContext } from 'react';
 // import CharactersContext from '../store/CharactersContext';
-import { useSelector } from 'react-redux';
+import classes from './CharacterDetailsCard.module.css';
 
-const CharacterDetailsCard = ({ id }) => {
+const genderBadgeStyle = (gender) => {
+    let backgroundColor;
 
-    let characters = useSelector(state => state.characters);
+    switch (gender) {
+        case 'Male':
+            backgroundColor = 'blue'
+            break;
+        case 'Female':
+            backgroundColor = '#FF008A'
+            break;
+        default:
+            backgroundColor = 'grey'
+    }
 
-    const character = characters.find(c => c.id === Number(id))
+    return {
+        border: `1px solid ${backgroundColor}`,
+        borderRadius: '20px',
+        padding: '2px 10px',
+        backgroundColor: backgroundColor
+    }
+}
 
-
+const CharacterDetailsCard = ({ image, name, gender, status, species, origin, location, episodes }) => {
     return (
-        <div>
-            <img src={character.image} alt={character.name} />
-            <p>{character.name}</p>
-            <p>{character.status}</p>
-            <p>{character.species}</p>
-            <p>{character.gender}</p>
-            <p>{character.origin.name}</p>
-            <p>{character.location.name}</p>
-            <ul>
-                {character.episode.map(e => {
-                    return (
-                        <li key={e}>
-                            {e}
-                        </li>
-                    )
-                })}
-            </ul>
+        <div className={classes.card}>
+            <div>
+                <img src={image} alt="Avatar" className={classes.avatar} />
+                <div className={classes.blackFade}></div>
+            </div>
+
+            <div className={classes.dataContainer}>
+                <div className={classes.headerCont}>
+                    <h1>{name}</h1>
+                    <div style={genderBadgeStyle(gender)}>
+                        <p>{gender}</p>
+                    </div>
+                </div>
+
+                <p>- status: {status}</p>
+                <p>- species: {species}</p>
+                <p>- origin: {origin.name}</p>
+                <p>- location: {location.name}</p>
+                <p>- episodes:</p>
+                <div className={classes.episodesContainer}>
+                    <ul>
+                        {episodes.map(e => {
+                            return (
+                                <li key={e}><p>{e}</p></li>
+                            )
+                        })}
+                    </ul>
+                </div>
+
+            </div>
+
+
+
 
         </div>
+
     );
 };
 
