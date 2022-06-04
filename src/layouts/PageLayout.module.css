@@ -1,0 +1,5 @@
+.pageLayout{
+    background-image: url('../assets/bg.png');
+    min-height: 100%;
+    padding-top: 40px;
+}

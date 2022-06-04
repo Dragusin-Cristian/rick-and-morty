@@ -3,11 +3,12 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { characters_actions } from "../store/Characters_Slice";
 // import CharactersContext from '../store/CharactersContext';
+import "./searchbar.scss";
 
-const SearchBar = (props) => {
+const SearchBar = () => {
     const dispatch = useDispatch();
     // const ctx = useContext(CharactersContext)
-    const searchRef = useRef();
+    const searchRef = useRef(); 
 
     async function getSearch(event) {
         event.preventDefault();
@@ -28,7 +29,7 @@ const SearchBar = (props) => {
                 id="search"
                 ref={searchRef}
                 onChange={getSearch}
-                placeholder="Cautare"
+                placeholder="Search for answers"
             />
         </form>
 

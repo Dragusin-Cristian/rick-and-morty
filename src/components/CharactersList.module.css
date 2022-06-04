@@ -1,5 +1,10 @@
 .charactersList{
-    display: flex;
-    flex-wrap: wrap;
-  
+    display: grid;
+     /* grid-template-columns: repeat(5, 1fr);   EASY WAY, not responsive */
+    grid-template-columns: repeat(auto-fit, 250px);
+    max-width: 1561px;  
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
 }

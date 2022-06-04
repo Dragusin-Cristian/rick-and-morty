@@ -1,7 +1,6 @@
 // import { useContext } from 'react';
 // import CharactersContext from '../store/CharactersContext';
 import { useSelector } from 'react-redux';
-import CardLayout from '../layouts/CardLayout';
 
 const CharacterDetailsCard = ({ id }) => {
 
@@ -11,7 +10,7 @@ const CharacterDetailsCard = ({ id }) => {
 
 
     return (
-        <CardLayout>
+        <div>
             <img src={character.image} alt={character.name} />
             <p>{character.name}</p>
             <p>{character.status}</p>
@@ -29,7 +28,7 @@ const CharacterDetailsCard = ({ id }) => {
                 })}
             </ul>
 
-        </CardLayout>
+        </div>
     );
 };
 

@@ -1,3 +1,50 @@
-img.avatar{
-    width: 100px;
-}
+.card {
+    position: absolute;
+    width: 90%;
+
+  }
+  
+  div.growCont{
+   
+    /* margin: 10px 7.5px; */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 95%;
+    position: relative;
+    margin: auto;
+  }
+  .growCont:hover{
+    width: 100%;
+  }
+  .card:hover {
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.8);
+   
+  }
+  
+  .container {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 135px;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);;
+  }
+
+  img.avatar{
+    width: 100%;
+  }
+  
+  span.itemData{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+
+  h4.itemName{
+      margin-bottom: 0px;
+  }
+  p.itemStatus{
+      margin: 8px auto;
+  }

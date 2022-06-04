@@ -1,13 +1,14 @@
 import React from 'react';
 import CharactersList from '../components/CharactersList';
 import SearchBar from '../components/SearchBar';
+import PageLayout from '../layouts/PageLayout';
 
 const SearchPage = () => {
     return (
-        <div>
+        <PageLayout>
            <SearchBar />
            <CharactersList />
-        </div>
+        </PageLayout>
     );
 };
 
