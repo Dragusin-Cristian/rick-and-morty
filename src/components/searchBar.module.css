@@ -1,13 +1,14 @@
 form.searchForm {
-  width: 100%;
-  margin: 0 auto 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 50px;
-  font-family: 'Courier Prime', monospace;
-  font-weight: bold;
+    width: 100%;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+  }
 
   input.searchInput {
     font-family: 'Courier Prime', monospace;
@@ -26,18 +27,21 @@ form.searchForm {
 
     -webkit-transition: max-width 0.25s ease-in-out, width 0.25s ease-in-out;
     transition: max-width 0.25s ease-in-out, width 0.25s ease-in-out;
-
-    &:focus {
-      outline-color: #203a61;
-      width: 80%;
-      max-width: 400px;
-
-      
-    }    
   }
-  ::placeholder{
+
+  .searchInput:focus {
+    outline-color: #203a61;
+    width: 80%;
+    max-width: 400px;
+  }    
+ 
+::placeholder{
     color: lightgrey;
     opacity: 1;
 
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
   }
+  .searchInput:focus::placeholder{
+    opacity: 0;
 }

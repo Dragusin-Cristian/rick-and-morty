@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { characters_actions } from "../store/Characters_Slice";
 // import CharactersContext from '../store/CharactersContext';
-import "./searchbar.scss";
+import classes from './searchBar.module.css';
 
 const SearchBar = () => {
     const dispatch = useDispatch();
@@ -22,9 +22,9 @@ const SearchBar = () => {
     }
     return (
 
-        <form onSubmit={getSearch} className="searchForm">
+        <form onSubmit={getSearch} className={classes.searchForm}>
             <input
-                className="searchInput"
+                className={classes.searchInput}
                 type="text"
                 id="search"
                 ref={searchRef}
