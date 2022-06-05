@@ -1,25 +1,13 @@
 import './App.css';
 import React from 'react';
-import { Routes, Route, Navigate, Link } from "react-router-dom";
-import { useEffect } from 'react';
-import { useDispatch} from 'react-redux';
-import { fetchCharacters } from './store/Characters_Actions';
-// import CharactersContext from './store/CharactersContext';
+import { Routes, Route, Navigate } from "react-router-dom";
+
 import AppLayout from './layouts/AppLayout';
 import DetailsPage from './pages/DetailsPage';
 import SearchPage from './pages/SearchPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
-  // const ctx = useContext(CharactersContext);
-  // const fetchCharacters = ctx.fetchCharacters;
-  // fetchCharacters();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-      dispatch(fetchCharacters())
-  }, [dispatch]);
-
   return (
     <AppLayout>
       <Routes>

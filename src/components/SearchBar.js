@@ -1,14 +1,20 @@
 // import "./searchbar.scss";
-import { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { characters_actions } from "../store/Characters_Slice";
 // import CharactersContext from '../store/CharactersContext';
 import classes from './searchBar.module.css';
 
 const SearchBar = () => {
+    const search = useSelector(state => state.search);
     const dispatch = useDispatch();
     // const ctx = useContext(CharactersContext)
     const searchRef = useRef(); 
+
+    // keep the  search value
+    useEffect(()=>{
+        searchRef.current.value = search;
+    }, [search])
 
     async function getSearch(event) {
         event.preventDefault();

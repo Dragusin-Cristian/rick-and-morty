@@ -19,7 +19,7 @@ const CharactersListItem = ({ avatar, name, status, id }) => {
                     </div>
                 </div>
             </div>
-            
+
         </Link>
     );
 }
