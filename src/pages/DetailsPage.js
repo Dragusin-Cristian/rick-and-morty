@@ -34,7 +34,7 @@ const DetailsPage = () => {
 
     // fetches the character data || called when isFirstLoad is true
     const getCharacter = useCallback(async () => {
-        const response = await fetch(`https://rickandmortyapi.com/api/character/${params.id}`);
+        const response = await fetch(`${process.env.REACT_APP_GET_CHARACTERS}/${params.id}`);
         const data = await response.json();
         return data;
     }, [params.id]);
