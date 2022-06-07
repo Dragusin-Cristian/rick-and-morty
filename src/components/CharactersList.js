@@ -22,7 +22,8 @@ const CharactersList = () => {
                 setSearchedItems(characters);
             } else {
                 setSearchedItems(characters.filter(c => c.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 
-                || c.status.toLowerCase().indexOf(search.toLowerCase()) !== -1));
+                // || c.status.toLowerCase().indexOf(search.toLowerCase()) !== -1 
+                ));
             }
         }
     }, [isLoading, characters, search])

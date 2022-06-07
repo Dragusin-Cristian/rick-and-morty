@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchCharacters } from '../store/Characters_Actions';
 // import CharactersContext from './store/CharactersContext';
 import CharactersList from '../components/CharactersList';
@@ -11,12 +11,15 @@ const SearchPage = () => {
     // const ctx = useContext(CharactersContext);
     // const fetchCharacters = ctx.fetchCharacters;
     // fetchCharacters();
+    const isFirstLoad = useSelector(state => state.isFirstLoad);
     const dispatch = useDispatch();
-    console.log('Rended Search');
+    console.log('Rended Search', isFirstLoad);
 
     useEffect(() => {
-        dispatch(fetchCharacters())
-    }, [dispatch]);
+        if (isFirstLoad) {
+            dispatch(fetchCharacters())
+        }
+    }, [dispatch, isFirstLoad]);
     return (
         <PageLayout>
             <SearchBar />

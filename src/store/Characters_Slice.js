@@ -5,7 +5,8 @@ const initialState = {
     search: '',
     isLoading: true,
     erroState: false,
-    isFirstLoad: true
+    isFirstLoad: true,
+    status: ''
 }
 
 const charactersSlice = createSlice({
@@ -26,6 +27,9 @@ const charactersSlice = createSlice({
         },
         setIsFirstLoad: (state, action) => {
             state.isFirstLoad = action.payload
+        },
+        setStatus: (state, action) => {
+            state.status = action.payload
         }
     }
 })
