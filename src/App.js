@@ -1,8 +1,5 @@
-import './App.css';
-import React from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
-
-import AppLayout from './layouts/AppLayout';
+import AppLayout from './layouts/AppLayout/AppLayout';
 import DetailsPage from './pages/DetailsPage';
 import SearchPage from './pages/SearchPage';
 import NotFoundPage from './pages/NotFoundPage';

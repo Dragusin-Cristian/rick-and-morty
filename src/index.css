@@ -2,12 +2,49 @@
 
 body, html {
   margin: 0;
+  padding: 0;
   min-height: fit-content;
   height: 100%;
   font-family: 'Courier Prime', monospace;
   font-weight: bold;
 }
+
+html{
+  padding-bottom: -200px;
+}
+
 div#root{
   min-height: fit-content;
   height: 100%;
+}
+
+h1{
+  font-weight: 400;
+}
+
+p{
+  font-weight: 400;
+  margin: 5px 0 0 ;
+}
+
+/* SCROLL BAR */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgrey; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
 }
