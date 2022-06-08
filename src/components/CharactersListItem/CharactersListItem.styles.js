@@ -5,7 +5,7 @@ export const Box = styled.div`
   margin-bottom: 225px; /* the height of the image */
 `;
 
-export const CardCont = styled.div`
+export const CardContainer = styled.div`
   position: absolute;
 `;
 

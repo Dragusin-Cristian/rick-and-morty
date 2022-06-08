@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import img from '../../assets/bg.png';
 
-export const PageLayoutStyled = styled.div`
+export const PageLayoutContainer = styled.div`
   background-image: url(${img});
   min-height: 100%;
   padding-top: 30px;

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
 	Box,
-	CardCont,
+	CardContainer,
 	Card,
 	Avatar,
 	DataContainer,
@@ -14,7 +14,7 @@ const CharactersListItem = ({ avatar, name, status, id }) => {
 	return (
 		<Link to={`${id}`}>
 			<Box>
-				<CardCont>
+				<CardContainer>
 					<Card>
 						<Avatar source={avatar}/>
 						<DataContainer>
@@ -24,7 +24,7 @@ const CharactersListItem = ({ avatar, name, status, id }) => {
 							</ItemData>
 						</DataContainer>
 					</Card>
-				</CardCont>
+				</CardContainer>
 			</Box>
 		</Link>
 	);

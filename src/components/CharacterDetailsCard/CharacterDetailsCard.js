@@ -3,7 +3,7 @@ import {
 	Avatar,
 	BlackFade,
 	DataContainer,
-	HeaderCont,
+	HeaderContainer,
 	GenderBadgeStyle,
 	EpisodesContainer
 } from './CharacterDetailsCard.styles';
@@ -17,12 +17,12 @@ const CharacterDetailsCard = ({ image, name, gender, status, species, origin, lo
 			</div>
 
 			<DataContainer>
-				<HeaderCont>
+				<HeaderContainer>
 					<h1>{name}</h1>
 					<GenderBadgeStyle gender={gender}>
 						<p>{gender}</p>
 					</GenderBadgeStyle>
-				</HeaderCont>
+				</HeaderContainer>
 
 				<p>- status: {status}</p>
 				<p>- species: {species}</p>

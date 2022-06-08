@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
-export const SearchForm = styled.form`
+export const FilterContainer = styled.div`
   width: 100%;
-  /* margin: 0 auto 10px; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   text-align: center;
   height: 50px;
   font-family: 'Courier Prime', monospace;
@@ -26,7 +22,7 @@ export const SearchInput = styled.input`
     font-family: 'Courier Prime', monospace;
     font-weight: bold;
     width: 40vw;
-    max-width: 350px;
+    max-width: 400px;
     height: 50px;
     padding: 5px 20px;
     box-sizing: border-box;
@@ -47,8 +43,9 @@ export const SearchInput = styled.input`
     }
 
     &:focus{
-      width: 50vw;
-      max-width: 400px;
+      width: 60vw;
+      max-width: 500px;
+      outline: none;
 
       &::placeholder{
         opacity: 0;
@@ -58,13 +55,15 @@ export const SearchInput = styled.input`
 
 export const StatusInput = styled.select`
   font-family: 'Courier Prime', monospace;
-  font-weight: bold;
-  background-color: transparent;
-  color: black;
+  font-weight: 700;
+  background-color: #8733F3;
+  color: #39FF14;
   border: none;
-  background-color: white;
+  text-align: center;
 `;
 
 export const Option = styled.option`
-  background-color: white;
+  background-color: #39FF14;
+  color: #8733F3;
+  font-weight: 700;
 `; 

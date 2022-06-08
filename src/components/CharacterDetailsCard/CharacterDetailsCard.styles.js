@@ -38,7 +38,7 @@ export const DataContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
 `;
 
-export const HeaderCont = styled.div`
+export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

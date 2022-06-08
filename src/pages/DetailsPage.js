@@ -12,7 +12,6 @@ import PageLayout from '../layouts/PageLayout/PageLayout';
 const DetailsPage = () => {
   const params = useParams();
   const isFirstLoad = useSelector(state => state.isFirstLoad);
-  console.log(isFirstLoad);
   let characters = useSelector(state => state.characters);
   let c = characters.find(c => c.id === Number(params.id))
   const [character, setCharacter] = useState(c);

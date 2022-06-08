@@ -1,10 +1,10 @@
-import { PageLayoutStyled } from "./PageLayout.styles";
+import { PageLayoutContainer } from "./PageLayout.styles";
 
 const PageLayout = (props) => {
 	return (
-		<PageLayoutStyled>
+		<PageLayoutContainer>
 			{props.children}
-		</PageLayoutStyled>
+		</PageLayoutContainer>
 	);
 };
 

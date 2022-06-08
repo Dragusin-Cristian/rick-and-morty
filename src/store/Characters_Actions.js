@@ -11,14 +11,12 @@ const buildFetchUrl = (search, status) => {
 	} else if (!search && !status) {
 		link = `${process.env.REACT_APP_GET_CHARACTERS}`;
 	}
-	console.log(link);
 	return link;
 }
 
 export const fetchCharacters = () => {
 	return async (dispatch, getState) => {
 		const { search, status } = getState();
-		console.log(search, status);
 		const fetchData = async () => {
 			dispatch(characters_actions.setIsLoading(true));
 			const response = await fetch(buildFetchUrl(search, status));
@@ -32,7 +30,6 @@ export const fetchCharacters = () => {
 				
 			}
 			const data = await response.json();
-			console.log(data.results);
 			return data.results;
 		}
 
@@ -45,6 +42,7 @@ export const fetchCharacters = () => {
 		} catch (e) {
 			// handle error with a notification
 			// console.error(e);
+			dispatch(characters_actions.setCharacters([]));
 			dispatch(characters_actions.setIsLoading(false));
 			dispatch(characters_actions.setErrorState(e.message));
 		}

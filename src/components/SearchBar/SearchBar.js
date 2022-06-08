@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { characters_actions } from "../../store/Characters_Slice";
 import { fetchCharacters } from '../../store/Characters_Actions';
-import {SearchForm, InputContainer, SearchInput, StatusInput, Option} from './SearchBar.styles';
+import { FilterContainer, InputContainer, SearchInput, StatusInput, Option } from './SearchBar.styles';
 
 let filterTimeout;
 
@@ -25,12 +25,20 @@ const SearchBar = () => {
 
   const statusDropdownChange = (event) => {
     dispatch(characters_actions.setStatus(event.target.value));
-    searchHandler(event);
+    dispatch(fetchCharacters());
   }
 
   return (
-    <SearchForm onSubmit={searchHandler}>
+    <FilterContainer onSubmit={searchHandler}>
+
       <InputContainer>
+        <StatusInput value={status} onChange={statusDropdownChange}>
+          <Option value=""> ALL STATUSES </Option>
+          <Option value="alive"> ALIVE </Option>
+          <Option value="dead"> DEAD </Option>
+          <Option value="unknown"> UNKNOWN </Option>
+        </StatusInput>
+
         <SearchInput
           type="text"
           id="search"
@@ -39,14 +47,8 @@ const SearchBar = () => {
           placeholder="Search for character name"
         />
 
-        <StatusInput value={status} onChange={statusDropdownChange}>
-          <Option value=""> all statuses </Option>
-          <Option value="alive"> alive </Option>
-          <Option value="dead"> dead </Option>
-          <Option value="unknown"> unknown </Option>
-        </StatusInput>
       </InputContainer>
-    </SearchForm>
+    </FilterContainer>
   );
 };
 

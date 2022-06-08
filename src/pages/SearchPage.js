@@ -6,9 +6,8 @@ import CharactersList from '../components/CharactersList/CharactersList';
 import SearchBar from '../components/SearchBar/SearchBar';
 
 const SearchPage = () => {
-	const isFirstLoad = useSelector(state => state.isFirstLoad);
 	const dispatch = useDispatch();
-	console.log('Rended Search', isFirstLoad);
+	const isFirstLoad = useSelector(state => state.isFirstLoad);
 
 	useEffect(() => {
 		if (isFirstLoad) {

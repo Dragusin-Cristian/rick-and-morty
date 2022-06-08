@@ -1,10 +1,10 @@
-import { AppLayoutStyled } from "./AppLayout.styles";
+import { AppLayoutContainer } from "./AppLayout.styles";
 
 const AppLayout = (props) => {
 	return (
-		<AppLayoutStyled>
+		<AppLayoutContainer>
 			{props.children}
-		</AppLayoutStyled>
+		</AppLayoutContainer>
 	);
 };
 
