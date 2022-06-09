@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
-import { CharactersListContainer, ErrorMessage } from './CharactersList.styles';
+import { CharactersListContainer } from './CharactersList.styles';
+import { ErrorMessage } from '../Sharable/Sharabale';
 import CharactersListItem from '../CharactersListItem/CharactersListItem';
 
 const CharactersList = () => {
@@ -10,7 +11,7 @@ const CharactersList = () => {
   return (
     <CharactersListContainer>
       {isLoading && <p>Loading...</p>}
-      {error && <ErrorMessage>(X_X) {<br/>}{<br/>} {error}</ErrorMessage>}
+      {error && <ErrorMessage errorMessage={error} />}
       {(!isLoading && !error) && characters.map(character => {
         return (
           <CharactersListItem key={character.id}

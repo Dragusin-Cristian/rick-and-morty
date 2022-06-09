@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import {characters_actions} from '../store/Characters_Slice';
+import { ErrorMessage } from '../components/Sharable/Sharabale';
 import CharacterDetailsCard from '../components/CharacterDetailsCard/CharacterDetailsCard';
 import PageLayout from '../layouts/PageLayout/PageLayout';
 
@@ -11,12 +13,14 @@ import PageLayout from '../layouts/PageLayout/PageLayout';
 
 const DetailsPage = () => {
   const params = useParams();
+  const dispatch = useDispatch();
   const isFirstLoad = useSelector(state => state.isFirstLoad);
+  const error = useSelector(state => state.erroState);
   let characters = useSelector(state => state.characters);
   let c = characters.find(c => c.id === Number(params.id))
   const [character, setCharacter] = useState(c);
   const [episodes, setEpisodes] = useState([]);
-  const [episodesAreLoaded, setEpisodesAreChanged] = useState(isFirstLoad ? false : true);
+  const [episodesAreLoaded, setEpisodesAreLoaded] = useState(isFirstLoad ? false : true);
 
   // Loops through each episode passed as argument,
   // sends a fetch request, and updates the episodes state
@@ -43,15 +47,19 @@ const DetailsPage = () => {
     if (isFirstLoad) {
       (async () => {
         const data = await getCharacter();
-        setCharacter(data);
-        setEpisodesAreChanged(true);
-        getEpisodes(data.episode)
+        if(!data.error){
+          setCharacter(data);
+          setEpisodesAreLoaded(true);
+          getEpisodes(data.episode)
+        }else{
+          dispatch(characters_actions.setErrorState(data.error));
+        }
+        
       })();
     } else {
       getEpisodes(character.episode)
     }
   }, [
-    // character.episode, // triggers infinite loop
     getCharacter,
     getEpisodes,
     isFirstLoad]);
@@ -59,7 +67,8 @@ const DetailsPage = () => {
 
   return (
     <PageLayout>
-      {episodesAreLoaded && <CharacterDetailsCard
+      {error && <ErrorMessage errorMessage={error} />}
+      {(episodesAreLoaded && !error) && <CharacterDetailsCard
         image={character.image}
         name={character.name}
         gender={character.gender}

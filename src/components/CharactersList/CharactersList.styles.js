@@ -11,10 +11,3 @@ export const CharactersListContainer = styled.div`
     margin: 50px auto 0;
 `;
 
-export const ErrorMessage = styled.p`
-  background-color: red;
-  color: white;
-  padding: 10px 30px;
-  font-weight: 700;
-  border: 2px solid white;
-`;
