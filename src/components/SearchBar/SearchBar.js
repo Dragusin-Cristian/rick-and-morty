@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { characters_actions } from "../../store/Characters_Slice";
+import { charactersActions } from "../../store/Characters_Slice";
 import { fetchCharacters } from '../../store/Characters_Actions';
 import { FilterContainer, InputContainer, SearchInput, StatusInput, Option } from './SearchBar.styles';
 
@@ -19,12 +19,12 @@ const SearchBar = () => {
   }
 
   const searchInputHandler = (event) => {
-    dispatch(characters_actions.updateSearch(event.target.value));
+    dispatch(charactersActions.updateSearch(event.target.value));
     searchHandler(event);
   }
 
   const statusDropdownChange = (event) => {
-    dispatch(characters_actions.setStatus(event.target.value));
+    dispatch(charactersActions.setStatus(event.target.value));
     dispatch(fetchCharacters());
   }
 

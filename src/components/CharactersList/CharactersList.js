@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { CharactersListContainer } from './CharactersList.styles';
-import { ErrorMessage } from '../Sharable/Sharabale';
+import { ErrorMessage } from '../Shareable/Shareable';
 import CharactersListItem from '../CharactersListItem/CharactersListItem';
 
 const CharactersList = () => {

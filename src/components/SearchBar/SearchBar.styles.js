@@ -31,14 +31,11 @@ export const SearchInput = styled.input`
     background-color: transparent;
     border: none;
 
-
-    -webkit-transition: max-width 0.25s ease-in-out, width 0.25s ease-in-out;
     transition: max-width 0.25s ease-in-out, width 0.25s ease-in-out;
 
     &::placeholder{
       color: lightgrey;
       opacity: 1;
-      -webkit-transition: opacity 0.25s ease-in-out;
       transition: opacity 0.25s ease-in-out;
     }
 
