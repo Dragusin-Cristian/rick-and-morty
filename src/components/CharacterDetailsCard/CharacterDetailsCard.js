@@ -8,7 +8,9 @@ import {
 	EpisodesContainer
 } from './CharacterDetailsCard.styles';
 
-const CharacterDetailsCard = ({ image, name, gender, status, species, origin, location, episodes }) => {
+const CharacterDetailsCard = (props) => {
+	const { image, name, gender, status, species, origin, location } = props.character;
+	const episodes = props.episodes;
 	return (
 		<Card>
 			<div>

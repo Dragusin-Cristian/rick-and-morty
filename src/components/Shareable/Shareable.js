@@ -1,4 +1,4 @@
-import { ErrorMessageParagraph } from './Sharable.styles';
+import { ErrorMessageParagraph } from './Shareable.styles';
 
 export const ErrorMessage = (props) => {
   return (

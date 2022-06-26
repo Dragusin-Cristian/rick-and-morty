@@ -34,6 +34,6 @@ const charactersSlice = createSlice({
 	}
 })
 
-export const characters_actions = charactersSlice.actions;
+export const charactersActions = charactersSlice.actions;
 
 export default charactersSlice;
